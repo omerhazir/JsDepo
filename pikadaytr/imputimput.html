@@ -1,0 +1,29 @@
+<input id="S_input" type='time' value='now'/> 
+<input id="Sinput2" type='time' value='01:00'/> 
+<p>tıkla</p>
+
+<script src="dsy/jquery.min.js"></script>
+<script>
+var a;
+
+$("#S_input").on('input',function() {
+$("#Sinput2").val($("#S_input").val())
+a=$('#S_input').val();
+});
+
+$( "p" ).click(function() {
+  alert (a);
+});
+
+</script>
+  var myVariable;
+    myFunction1();
+    function myFunction1() {
+        myVariable = 'Hello 1';
+    }
+    alert('value: ' + myVariable);
+    myFunction2();
+    function myFunction2() {
+        myVariable = 'Hello 2';
+    }
+    alert('value: ' + myVariable);

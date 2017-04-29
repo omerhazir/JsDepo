@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Div Tarih Seçici(Datapicker) pikaday.js</title>
+  
+  
+  <link rel='stylesheet prefetch' href='dsy/pikadaytr.css'>
+
+  
+  
+</head>
+<body>
+  <div id="tarih"> </div>
+  <div id="zmn"></div>
+  <script src='dsy/jquery.min.js'></script>
+<script src="dsy/pikadaytr.js"></script>
+<script>
+var saat;
+var picker = new Pikaday({field: document.getElementById('tarih'),                        
+    firstDay: 1, 
+    onSelect: function(date) { tarih(date)}                                   
+ 
+                        });
+tarih(new Date());
+
+function tarih(tr){
+        var gun=tr.getDay();
+        var ay=tr.getMonth();
+        var yil=tr.getFullYear();
+        var gunler= ['Pazar', 'Pazartesi', 'Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
+        var aylar= ['Ocak', 'Şubat', 'Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];  
+        $('#tarih').html(tr.getDate()+' '+aylar[ay]+' '+yil+' '+gunler[gun]);
+        $('#zmn').html($('#S-input').val()); 
+};
+$("#tarih").click(function(){
+$('#S-input').val(new Date().toLocaleTimeString().substring(0,5));
+saat=($('#S-input').val());
+	});
+
+//$( "#tarih" ).text(date.toDateString());
+//var bicim  =date.toDateString().split(" ")
+  //alert( bicim[0]);
+</script>
+   
+</body>
+</html>
