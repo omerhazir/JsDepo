@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Css Sayfa Görünümlü Div -Son</title>
+  
+  
+  
+      <style>
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Handlee);
+
+body {
+    margin: 40px 0 0;
+    background: #91D1D3;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sayfa {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    min-width: 400px;
+    height: 480px;
+    margin: 0 auto;
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+   /* overflow: hidden;*/
+}
+.sayfa:before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 60px;
+    background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
+  background: -webkit-radial-gradient(#575450 6px, transparent 7px) repeat-y;
+    background-size: 30px 30px;
+    border-right: 3px solid #D44147;
+    box-sizing: border-box;
+}
+
+.icerik {
+    position: absolute;
+   top: 60px; right: 0; bottom: 30px; left: 60px;
+    background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+  background: -webkit-linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+    background-size: 30px 30px;
+}
+.icerik .yazi {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    padding: 0 0 0 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: mediumblue;
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 18px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+/*Tarih alanı*/
+.tarih {
+   position:absolute;
+   width: 120px;
+   height:122px;
+   top:-7px;
+   right:-7px;
+   background-image:url("Dsy/serit.png");
+   background-size: 100% 100%; 
+   z-index:3;      
+}
+
+.tarih div{
+    margin-top:38px;
+    margin-left:21px;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+	  </style>
+
+  
+</head>
+
+<body>
+  <div class="sayfa">
+ <div class="tarih"> <div>27 Nisan 17</div></div> 
+ <div class="icerik">
+   <div class="yazi" contenteditable="true">
+Css ile Sayfa Görünümlü Div
+<br><br>Css de linear-gradient ve radial-gradient özellikleri kullanılarak div arka planına çizgiler çizerek sayfa görüntüsü elde edildi.
+<br>Div contenteditable="true" özelliği kullanılarak düzenlenebilir metin alanı yapıldı...<br>Jquery SlimScroll eklentisi ile uzun yazılarda kaydırma çubuğu daha estetik hale getirildi.
+<br>Şerit(ribbon) kullanılarak tarih alanı eklendi.    
+ <br><br>Bence Bu Harika!...     
+ <br><br> Tarayıcı Uyumluluğu IE:10+
+ <br>
+ <img src="http://www.artifactconcept.com/images/tarayici-uyum-calismasi/tarayici-uyum-calismasi.png" alt="İlgili resim" width="300" height="100">    
+   </div> 
+</div> 
+</div>
+  <script src='Dsy/jquery.min.js'></script>
+<script src='Dsy/jquery.slimscroll.js'></script>
+
+    <script>
+$(function(){
+      
+      $('.yazi').slimScroll({
+          color: '#00f',
+          height: '100%'
+      });
+
+    });	
+	</script>
+
+</body>
+</html>
