@@ -46,4 +46,3 @@ if (new Date(tr)=="Invalid Date" && format==undefined){format=tr;tr=new Date()} 
     format=format.replace("hh",saat.substr(0,5));  
   return format;
 };
-
